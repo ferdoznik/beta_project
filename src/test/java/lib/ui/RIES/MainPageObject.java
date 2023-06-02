@@ -61,7 +61,7 @@ public class MainPageObject {
     int y = by_y; // Specify the y-coordinate where you want to tap
 
             try {
-        Thread.sleep(500); // Add a 2-second delay
+        Thread.sleep(500); // Add a nnnn-second delay
     } catch (InterruptedException e) {
         e.printStackTrace();
     }
@@ -89,16 +89,6 @@ public class MainPageObject {
         return element;
     }
 
-    //        public void swipeUp(int timeOfSwipe)
-//    {
-//        TouchAction action = new TouchAction(driver);
-//        Dimension size = driver.manage().window().getSize();
-//        int x = size.width / 2;
-//        int start_y = (int) (size.height * 0.8);
-//        int end_y = (int) (size.height * 0.2);
-//
-//        action.press(x, start_y).waitAction(timeOfSwipe).moveTo(x, end_y).release().perform();
-//    }
     public void swipeUp(int timeOfSwipe) {
         if(driver instanceof AppiumDriver) {
             TouchAction action = new TouchAction((PerformsTouchActions)driver);
@@ -321,20 +311,6 @@ public class MainPageObject {
                         activeElement.sendKeys(Keys.RETURN);}
                 }
     }
-
-//    public void tapByCoordinatesWE(int x, int y) {
-//        WebDriver webDriver = (WebDriver) driver;
-//
-//        try {
-//            Thread.sleep(2000); // Add a 2-second delay
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-//
-//        Actions actions = new Actions(webDriver);
-//        WebElement body = webDriver.findElement(By.cssSelector("body")); // Find the <body> element using CSS selector
-//        actions.moveToElement(body, x, y).click().perform(); // Perform the tap action at the specified coordinates
-//    }
 
     public String takeScreenshot(String name) {
         TakesScreenshot ts = this.driver;

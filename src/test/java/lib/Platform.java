@@ -10,7 +10,6 @@ import java.net.URL;
 public class Platform {
     private static final String PLATFORM_IOS = "ios";
     private static final String PLATFORM_ANDROID = "android";
-    private static final String PLATFORM_MOBILE_WEB = "mobile_web";
     private static final String APPIUM_ANDROID_URL = "http://0.0.0.0:4723";
     private static final String APPIUM_IOS_URL = "http://0.0.0.0:4723";
     private static Platform instance;
@@ -45,7 +44,6 @@ public class Platform {
     {
         return isPlatform(PLATFORM_IOS);
     }
-    public boolean isMW() { return isPlatform(PLATFORM_MOBILE_WEB);}
 
     private DesiredCapabilities getAndroidDesiredCapabilities()
     {

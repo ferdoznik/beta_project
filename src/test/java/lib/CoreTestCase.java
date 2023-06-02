@@ -50,16 +50,6 @@ public class CoreTestCase {
         }
     }
 
-    @Step("Open Wikipedia URL for Mobile Web (this method does nothing for Android and iOS)")
-    protected void openWIKIWebPageMobileWeb()
-    {
-        if (Platform.getInstance().isMW())
-        {driver.get("https://en.m.wikipedia.org");
-        }else {
-            System.out.println("Method openWIKIWebPageMobileWeb does nothing for platform" + Platform.getInstance().getPlatformVar());
-        }
-    }
-
     @Step("Create Allure Property file")
     private void createAllurePropertyFile() {
         String path = System.getProperty("allure.results.directory");
