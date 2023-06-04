@@ -89,16 +89,6 @@ public class MainPageObject {
         return element;
     }
 
-    //        public void swipeUp(int timeOfSwipe)
-//    {
-//        TouchAction action = new TouchAction(driver);
-//        Dimension size = driver.manage().window().getSize();
-//        int x = size.width / 2;
-//        int start_y = (int) (size.height * 0.8);
-//        int end_y = (int) (size.height * 0.2);
-//
-//        action.press(x, start_y).waitAction(timeOfSwipe).moveTo(x, end_y).release().perform();
-//    }
     public void swipeUp(int timeOfSwipe) {
         if(driver instanceof AppiumDriver) {
             TouchAction action = new TouchAction((PerformsTouchActions)driver);
@@ -218,22 +208,11 @@ public class MainPageObject {
 
     public boolean isElementLocatedOnTheScreen(String locator) {
         int element_locator_by_y = this.waitForElementPresent(locator, "Cannot find the element by locator", 5).getLocation().getY();
-//        if (Platform.getInstance().isMW()) {
-//            JavascriptExecutor JSExecutor = (JavascriptExecutor) driver;
-//            Object js_result = JSExecutor.executeScript("return window.pageYOffset");
-//            element_locator_by_y -= Integer.parseInt(js_result.toString());
-//        }
         int screen_size_by_y = driver.manage().window().getSize().getHeight();
         return element_locator_by_y < screen_size_by_y;
     }
 
     public void tapElementAndHold(int hold_msec) {
-//        int left_x = element.getLocation().getX();
-//        int right_x = left_x + element.getSize().getWidth();
-//        int upper_y = element.getLocation().getY();
-//        int lower_y = upper_y + element.getSize().getHeight();
-//        int middle_y = (upper_y + lower_y) / 2;
-
         TouchAction action = new TouchAction((PerformsTouchActions) driver);
         action.press(PointOption.point(40, 740))
                 .waitAction(WaitOptions.waitOptions(Duration.ofMillis(hold_msec)))
@@ -321,20 +300,6 @@ public class MainPageObject {
                         activeElement.sendKeys(Keys.RETURN);}
                 }
     }
-
-//    public void tapByCoordinatesWE(int x, int y) {
-//        WebDriver webDriver = (WebDriver) driver;
-//
-//        try {
-//            Thread.sleep(2000); // Add a 2-second delay
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-//
-//        Actions actions = new Actions(webDriver);
-//        WebElement body = webDriver.findElement(By.cssSelector("body")); // Find the <body> element using CSS selector
-//        actions.moveToElement(body, x, y).click().perform(); // Perform the tap action at the specified coordinates
-//    }
 
     public String takeScreenshot(String name) {
         TakesScreenshot ts = this.driver;

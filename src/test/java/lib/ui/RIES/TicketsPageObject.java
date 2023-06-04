@@ -136,7 +136,7 @@ public class TicketsPageObject extends MainPageObject {
         this.tapByCoordinates(1,100);
     }
 
-    @Step("Entering clients name and phone number by string")
+    @Step("Entering clients phone number by string")
     public void firstStepCreatingTicket(String phone_number){
         this.waitForElementPresent(PHONE_NUMBER_FIELD, "Cannot see phone number field",3);
         this.waitForElementAndClick(PHONE_NUMBER_FIELD, "Cannot find and click search init element", 2);
@@ -145,6 +145,7 @@ public class TicketsPageObject extends MainPageObject {
         this.waitForElementAndClick(CONTINUE_BUTTON_CREATE_TICKET,"Cannot find and click Continue button",3);
     }
 
+    @Step("Entering clients name, tickets title and commentary")
     public void secondStepCreatingTicket(String ticket_title, String commentary){
         this.waitForElementPresent(DEAL_TYPE_TICKET_BUTTON, "Cannot see deal type button",3);
         this.waitForElementAndClick(TICKET_TITLE_FIELD,"Cannot find and click ticket's title filed",3);
@@ -209,6 +210,7 @@ public class TicketsPageObject extends MainPageObject {
         this.waitForElementAndClick(SAVE_TICKET_BUTTON, "Cannot see Save button on the screen",3);
     }
 
+    @Step("Clicking Back button")
     public void pressBack(){
         this.waitForElementPresent(TOPBAR_BACK_BUTTON,"Cannot see Back button",3);
         this.waitForElementAndClick(TOPBAR_BACK_BUTTON,"Cannot find and click Back button",3);
