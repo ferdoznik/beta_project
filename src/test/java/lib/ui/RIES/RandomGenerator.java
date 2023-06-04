@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public final class RandomGenerator {
-    private static final String CONSTANT_PART = "Ticket";
+    private static final String CONSTANT_PART = "Tickets title";
 
     private RandomGenerator() {
         // Private constructor to prevent instantiation

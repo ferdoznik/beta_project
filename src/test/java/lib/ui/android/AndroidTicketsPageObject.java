@@ -8,7 +8,7 @@ public class AndroidTicketsPageObject extends TicketsPageObject {
     static {
             OBJECTS_TAB = "xpath://*[contains(@text,'Объекты')]";
             TICKETS_TAB = "xpath://*[contains(@text,'Заявки')]";
-            CREATE_NEW_TICKET_BUTTON = "id:com.riesapp:id/ticketsListCreateTicketButton";
+            CREATE_NEW_TICKET_BUTTON = "id:com.riesapp.debug:id/ticketsListCreateTicketButton";
             MORTGAGE_ARGUMENTS_TYPES = "xpath://*[contains(@text,'Утверждение к заявке *')]";
             MORTGAGE_ARGUMENTS_NOTHINGOFTHESE = "xpath://*[contains(@text,'Ничего из перечисленного не относится к заявке')]";
             CONTACT_WAYS_BS = "xpath://*[contains(@text,'Способ связи с клиентом')]";
@@ -18,33 +18,42 @@ public class AndroidTicketsPageObject extends TicketsPageObject {
             CONTACT_WAY_VIBER = "xpath://*[contains(@text,'Viber')]";
             CONTACT_WAY_WHATSAPP = "xpath://*[contains(@text,'WhatsApp')]";
             CONTACT_WAY_DONE = "xpath://*[contains(@text,'Готово')]";
-            CREATE_MORTGAGE_TICKET_BUTTON = "id:com.riesapp:id/createButton";
-            MORTGAGE_CREATE_COMMENTARY_FIELD = "id:com.riesapp:id/comment";
+            CREATE_MORTGAGE_TICKET_BUTTON = "id:com.riesapp.debug:id/createButton";
+            MORTGAGE_CREATE_COMMENTARY_FIELD = "id:com.riesapp.debug:id/comment";
             MORTGAGE_CREATE_COMMENTARY_FIELD_TEXT_FIELD = "xpath://*[contains(@text,'Комментарий')]/preceding-sibling::*";
             MORTGAGE_TICKET_IN_INNER_TICKETS_LIST = "xpath://*[contains(@text,'Ипотека')]";
             INNER_TICKETS_BUTTON = "xpath://*[contains(@text,'Внутренние заявки')]";
             MORTGAGE_INNER_TICKET_TYPE = "xpath://*[contains(@text,'Ипотека')]";
-            SAVE_TICKET_BUTTON = "id:com.riesapp:id/saveButton";
-            PHONE_NUMBER_FIELD = "xpath://*[contains(@text,'Телефон')]";
+            SAVE_TICKET_BUTTON = "id:com.riesapp.debug:id/saveButton";
+            PHONE_NUMBER_FIELD = "xpath://*[contains(@text,'Номер телефона')]";
+            TOPBAR_BACK_BUTTON = "id:com.riesapp.debug:id/topBarNavigationIcon";
             MORTGAGE_AVAILABLE_MONEY_AMOUNT = "xpath://*[contains(@text,'Собственные средства, ₽')]";
             MORTGAGE_AVAILABLE_MONEY_AMOUNT_TEXT_FIELD = "xpath://*[contains(@text,'Собственные средства, ₽')]/preceding-sibling::*";
-            EDIT_PHONE_NUMBER_FIELD = "xpath://*[contains(@text,'Телефон')]/preceding-sibling::*";
+            EDIT_PHONE_NUMBER_FIELD = "xpath://*[contains(@text,'Номер телефона')]/preceding-sibling::*";
+            DEAL_TYPE_TICKET_BUTTON = "xpath://*[contains(@text,'Тип операции *')]";
+            DEAL_TYPE_BUY = "xpath://*[contains(@text,'Купить')]";
+            CONTINUE_BUTTON_CREATE_TICKET = "id:com.riesapp.debug:id/saveButton";
+            TICKETS_CLIENT_NAME = "xpath://*[contains(@text,'Test_Auto')]";
             MORTGAGE_ESTATE_PRICE_AMOUNT = "xpath://*[contains(@text,'Стоимость недвижимости, ₽')]";
             MORTGAGE_ESTATE_PRICE_AMOUNT_TEXT_FIELD = "xpath://*[contains(@text,'Стоимость недвижимости, ₽')]/preceding-sibling::*";
             CREATE_INNER_TICKET_BUTTON = "xpath://*[contains(@text,'Создать заявку')]";
             CLIENT_NAME_FOR_TICKET_FIELD = "xpath://*[contains(@text,'Имя')]";
             EDIT_CLIENT_NAME_FOR_TICKET_FIELD = "xpath://*[contains(@text,'Имя')]/preceding-sibling::*";
+            TICKET_TITLE_FIELD = "xpath://*[contains(@text,'Название заявки')]";
+            EDIT_TICKET_TITLE_FIELD = "xpath://*[contains(@text,'Название заявки')]/preceding-sibling::*";
             CREATE_TICKET_COMMENTARY_FIELD = "xpath://*[@text='Комментарий']";
-            TICKETS_TYPE_MODAL = "id:com.riesapp:id/cellTextSecondV2";
+            EDIT_CREATE_TICKET_COMMENTARY_FIELD = "xpath://*[contains(@text,'Комментарий')]/preceding-sibling::*";
+            TICKETS_TYPE_MODAL = "id:com.riesapp.debug:id/cellTextSecondV2";
             BUY_FLAT_TICKET_TYPE = "xpath://*[@text='Продажа вторичная']";
             BUY_GARAGE_TICKET_TYPE = "xpath://*[@text='Покупка гаражи']";
             SELL_FLATS_TYPE = "xpath://*[@text='Продажа вторичная']";
-            CLIENTS_FIO_ON_TICKET_CARD_TPL = "xpath://*[@text='{first_name}']";
-            CLOSE_CROSS_BUTTON = "id:com.riesapp:id/topBarNavigationIcon";
-            CREATE_OBJECT_BUTTON = "id:com.riesapp:id/createObject";
-            TYPE_OF_ESTATE = "xpath://*[@text='Тип недвижимости *']";
+            CLIENTS_FIO_ON_TICKET_CARD_TPL = "xpath://*[@text='{ticket_title}']";
+            CLOSE_CROSS_BUTTON = "id:com.riesapp.debug:id/topBarNavigationIcon";
+            CREATE_OBJECT_BUTTON = "id:com.riesapp.debug:id/createObject";
+            TYPE_OF_ESTATE_BS = "xpath://*[@text='Класс недвижимости *']";
             CITY_FILTER = "xpath://*[@text='Город *']";
-            CITY_IS_TYUMEN = "id:com.riesapp:id/topBarSearchEditText";
+            TYPE_OF_ESTATE_GARAGE = "xpath://*[@text='Гаражи']";
+            CITY_IS_TYUMEN = "id:com.riesapp.debug:id/topBarSearchEditText";
             APPROVE_CITY_IS_TYUMEN = "xpath://*[@text='Тюмень']";
             TYPE_OF_ESTATE_IS_FLAT = "xpath://*[@text='Квартира']";
             REGION_FILTER_FOR_ADDRESS = "xpath://*[@text='Район *']";
@@ -57,7 +66,7 @@ public class AndroidTicketsPageObject extends TicketsPageObject {
             FLAT_NUMBER_FILED_EDIT = "xpath://*[@text='Квартира *']/preceding-sibling::*";
             ENTRANCE_SECTION_FILED = "xpath://*[@text='Подъезд/Блок-секция *']";
             ENTRANCE_SECTION_FILED_EDIT = "xpath://*[@text='Подъезд/Блок-секция *']/preceding-sibling::*";
-            CONTINUE_BUTTON = "id:com.riesapp:id/saveButtonV2";
+            CONTINUE_BUTTON = "id:com.riesapp.debug:id/saveButtonV2";
             WALLS_MATERIAL_FILTER = "xpath://*[@text='Материал стен *']";
             TYPE_OF_WALL_IS_BLOCKS = "xpath://*[@text='Блочные']";
             SERIES_FILTER = "xpath://*[@text='Серия *']";
@@ -70,7 +79,7 @@ public class AndroidTicketsPageObject extends TicketsPageObject {
             ROOMS_COUNT_FIELD_EDIT = "xpath://*[@text='Количество комнат *']/preceding-sibling::*";
             PLAN_TYPE = "xpath://*[@text='Планировка *']";
             PLAN_TYPE_IS_TYPICAL = "xpath://*[@text='Обычная планировка']";
-            LOADER = "id:com.riesapp:id/ticketsListLoader";
+            LOADER = "id:com.riesapp.debug:id/ticketsListLoader";
             SQUARE_OF_ESTATE_FIELD = "xpath://*[@text='Площадь, м² *']";
             SQUARE_OF_ESTATE_FIELD_EDIT = "xpath://*[@text='Площадь, м² *']/preceding-sibling::*";
             SQUARE_OF_KITCHEN_FIELD = "xpath://*[@text='Площадь кухни *']";
@@ -85,11 +94,11 @@ public class AndroidTicketsPageObject extends TicketsPageObject {
             NOTE_FOR_MYSELF_EDIT = "xpath://*[@text='Примечание для себя']/preceding-sibling::*";
             NOTE_FOR_REALTOR = "xpath://*[@text='Примечание для риелтора']";
             NOTE_FOR_REALTOR_EDIT = "xpath://*[@text='Примечание для риелтора']/preceding-sibling::*";
-            SAVE_CREATED_OBJECT_BUTTON = "id:com.riesapp:id/saveButtonV2";
+            SAVE_CREATED_OBJECT_BUTTON = "id:com.riesapp.debug:id/saveButtonV2";
             OBJECT_STATUS_N_ID_IN_TICKET = "xpath://*[contains(@text,'Объект')]";
             OBJECT_ADDRESS_IN_TICKET = "xpath://*[contains(@text,'1 мкр., 11')]";
             TICKET_NAME_AT1 = "xpath://*[@text='Autotest#1']";
-            TICKETS_TOP_BAR = "id:com.riesapp:id/topBarTitle";
+            TICKETS_TOP_BAR = "id:com.riesapp.debug:id/topBarTitle";
     }
     public AndroidTicketsPageObject(RemoteWebDriver driver) {super(driver);}
 }

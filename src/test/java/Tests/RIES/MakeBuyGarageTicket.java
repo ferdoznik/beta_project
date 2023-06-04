@@ -3,7 +3,6 @@ package Tests.RIES;
 import io.qameta.allure.*;
 import io.qameta.allure.junit4.DisplayName;
 import lib.CoreTestCase;
-import lib.Platform;
 import lib.ui.RIES.*;
 import org.junit.Test;
 import lib.ui.factories.AuthPageObjectFactory;
@@ -13,7 +12,8 @@ public class MakeBuyGarageTicket extends CoreTestCase {
     private static final String
             login = "130522",
             password = "99679218Aa",
-            phone_number = "89612133383";
+            commentary = "Test commentary for autotest",
+            phone_number = "89211111111";
 
 
     @Test
@@ -23,7 +23,7 @@ public class MakeBuyGarageTicket extends CoreTestCase {
     @Step("Starting test 'testMakeTicketBuyGarage'")
     @Severity(value = SeverityLevel.NORMAL)
     public void testMakeTicketBuyGarage() {
-        String first_name = RandomGenerator.generateRandomTicketName(); // Generate the random ticket name
+        String ticket_title = RandomGenerator.generateRandomTicketName(); // Generate the random ticket name
         AuthPageObject Auth = AuthPageObjectFactory.get(driver);
         MainPageObject Main = new MainPageObject(driver);
         TicketsPageObject Ticket = TicketsPageObjectFactory.get(driver);
@@ -36,22 +36,11 @@ public class MakeBuyGarageTicket extends CoreTestCase {
 
         Ticket.clickTicketsTab();
         Ticket.clickCreateNewTicketButton();
-        Ticket.initializeCreatingNewTicket(phone_number, first_name);
-        if (Platform.getInstance().isAndroid()) {
-            Main.hideKeyboard();
-        } else {
-            Main.tapByCoordinates(1, 150);
-        }
-        if (Platform.getInstance().isAndroid()) {
-            Ticket.swipeTillCommentsField();
-            Ticket.openTicketTypeModal();
-            Main.hideKeyboard();
-        } else {
-            Ticket.tapTicketTypeModal();
-        }
+        Ticket.firstStepCreatingTicket(phone_number);
+        Ticket.secondStepCreatingTicket(ticket_title, commentary);
         Main.hideKeyboard();
-        Ticket.changeTicketTypeToBuyGarage();
         Ticket.createCurrentTicket();
-        Ticket.assertIfTicketIsCreated(first_name);
+        Ticket.pressBack();
+        Ticket.assertIfTicketIsCreated(ticket_title);
     }
 }

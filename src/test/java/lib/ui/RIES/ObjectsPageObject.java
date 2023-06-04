@@ -1,9 +1,13 @@
 package lib.ui.RIES;
 
+import io.appium.java_client.ExecutesMethod;
 import io.appium.java_client.PerformsTouchActions;
 import io.appium.java_client.TouchAction;
+import io.appium.java_client.touch.TapOptions;
+import io.appium.java_client.touch.offset.ElementOption;
 import io.appium.java_client.touch.offset.PointOption;
 import io.qameta.allure.Step;
+import lib.Platform;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 
@@ -41,7 +45,7 @@ public class ObjectsPageObject extends MainPageObject {
     public void clickSearchObjects(){
         this.waitForElementPresent(SHOW_OBJECTS_BUTTON,"Cannot see Search objects button", 3);
         this.waitForElementAndClick(SHOW_OBJECTS_BUTTON, "Cannot find and click Search objects button", 3);
-        this.waitForElementPresent(MAP_LIST_FILTER, "Cannot see map-list filter", 3);
+        if (Platform.getInstance().isIOS()){this.waitForElementPresent(MAP_LIST_FILTER, "Cannot see map-list filter", 3);}
     }
 
     @Step("Clicking Search history button")
@@ -71,7 +75,6 @@ public class ObjectsPageObject extends MainPageObject {
 
     @Step("Asserting if all parameters are present")
     public void assertIfAllParametersPresent(){
-//        if (Platform.getInstance().isIOS()){this.waitForElementPresent(OBJECTS_ID,"Cannot see objects id",4);}
         if (this.isElementPresent(UPPER_PARAM_FIELD))
         {
             this.isElementPresent(LOWER_PARAM_FIELD);

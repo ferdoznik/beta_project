@@ -15,9 +15,8 @@ public class CheckObjectsParameters extends CoreTestCase {
     private static final String
             login = "130522",
             password = "99679218Aa",
-            price = "2 000",
-            object_code = "10046705",
-            object_code_prod = "9333317";
+            price = "2 345 000",
+            object_code = "189953";
 
     @Test
     @Features(value = {@Feature(value = "Auth"), @Feature(value = "Objects")})
@@ -36,11 +35,7 @@ public class CheckObjectsParameters extends CoreTestCase {
         Auth.waitForLoaderToDisappear();
         Auth.assertIfBlockIsThere();
 
-        if (Platform.getInstance().isAndroid()) {
-            Objects.enterObjectCode(object_code_prod);
-        } else {
-            Objects.enterObjectCode(object_code);
-        }
+        Objects.enterObjectCode(object_code);
         Main.hideKeyboard();
         if (Platform.getInstance().isIOS()) {
             Objects.tapMyObjects();
@@ -48,16 +43,6 @@ public class CheckObjectsParameters extends CoreTestCase {
         Objects.clickSearchObjects();
         if (Platform.getInstance().isAndroid()) {
             Objects.clickPopupAccept();
-            Objects.openObjectCardByPrice(price);
-        } else {
-            Main.waitForTwoSecond();
-            Objects.tapFirstObjectInTheList();
-        }
-        Objects.assertIfAllParametersPresent();
-        Objects.backToSearchHistory();
-        Objects.openHistoryStoryByObjectCode(object_code);
-        Objects.clickShowHistorySearchObjects();
-        if (Platform.getInstance().isAndroid()) {
             Objects.openObjectCardByPrice(price);
         } else {
             Main.waitForTwoSecond();

@@ -34,7 +34,7 @@ public class IOSTicketsPageObject extends TicketsPageObject {
         CLIENTS_FIO_ON_TICKET_CARD_TPL = "xpath:(//XCUIElementTypeOther[@name='\uEB8C Клиент {first_name}'])[2]";
         CLOSE_CROSS_BUTTON = "xpath:(//XCUIElementTypeOther[@name='Отмена'])[3]";
         CREATE_OBJECT_BUTTON = "xpath:(//XCUIElementTypeOther[@name='Создать объект'])[2]";
-        TYPE_OF_ESTATE = "id:Тип недвижимости * \uECC1";
+        TYPE_OF_ESTATE_BS = "id:Тип недвижимости * \uECC1";
         CITY_FILTER = "id:Город * Тюмень \uECC1";
         CITY_IS_TYUMEN = "id:Поиск";
         APPROVE_CITY_IS_TYUMEN = "xpath:(//XCUIElementTypeOther[@name='Тюмень \uE901'])[2]";

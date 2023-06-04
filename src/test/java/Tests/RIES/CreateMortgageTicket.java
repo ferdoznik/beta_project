@@ -37,7 +37,7 @@ public class CreateMortgageTicket extends CoreTestCase {
 
         Ticket.clickTicketsTab();
         Ticket.clickCreateNewTicketButton();
-        Ticket.initializeCreatingNewTicket(phone_number, first_name);
+        Ticket.firstStepCreatingTicket(phone_number);
         if (Platform.getInstance().isAndroid()) {
             Main.hideKeyboard();
         } else {

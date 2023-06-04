@@ -36,18 +36,27 @@ public class TicketsPageObject extends MainPageObject {
             MORTGAGE_CREATE_COMMENTARY_FIELD_TEXT_FIELD,
             CREATE_INNER_TICKET_BUTTON,
             SAVE_TICKET_BUTTON,
+            TOPBAR_BACK_BUTTON,
             PHONE_NUMBER_FIELD,
             EDIT_PHONE_NUMBER_FIELD,
+            TICKETS_CLIENT_NAME,
+            CONTINUE_BUTTON_CREATE_TICKET,
+            DEAL_TYPE_TICKET_BUTTON,
+            DEAL_TYPE_BUY,
+            TICKET_TITLE_FIELD,
+            EDIT_TICKET_TITLE_FIELD,
             CLIENT_NAME_FOR_TICKET_FIELD,
             EDIT_CLIENT_NAME_FOR_TICKET_FIELD,
             CREATE_TICKET_COMMENTARY_FIELD,
+            EDIT_CREATE_TICKET_COMMENTARY_FIELD,
             TICKETS_TYPE_MODAL,
             BUY_GARAGE_TICKET_TYPE,
             SELL_FLATS_TYPE,
             CLIENTS_FIO_ON_TICKET_CARD_TPL,
             CLOSE_CROSS_BUTTON,
             CREATE_OBJECT_BUTTON,
-            TYPE_OF_ESTATE,
+            TYPE_OF_ESTATE_BS,
+            TYPE_OF_ESTATE_GARAGE,
             CITY_FILTER,
             CITY_IS_TYUMEN,
             APPROVE_CITY_IS_TYUMEN,
@@ -128,12 +137,28 @@ public class TicketsPageObject extends MainPageObject {
     }
 
     @Step("Entering clients name and phone number by string")
-    public void initializeCreatingNewTicket(String phone_number, String first_name){
+    public void firstStepCreatingTicket(String phone_number){
         this.waitForElementPresent(PHONE_NUMBER_FIELD, "Cannot see phone number field",3);
         this.waitForElementAndClick(PHONE_NUMBER_FIELD, "Cannot find and click search init element", 2);
         this.waitForElementAndSendKeys(EDIT_PHONE_NUMBER_FIELD, phone_number, "Cannot send phone number", 3);
-        this.waitForElementAndClick(CLIENT_NAME_FOR_TICKET_FIELD, "Cannot find and click search init element", 2);
-        this.waitForElementAndSendKeys(EDIT_CLIENT_NAME_FOR_TICKET_FIELD, first_name, "Cannot send client name number", 3);
+        this.waitForElementPresent(TICKETS_CLIENT_NAME,"Cannot find ticket by client's name",3);
+        this.waitForElementAndClick(CONTINUE_BUTTON_CREATE_TICKET,"Cannot find and click Continue button",3);
+    }
+
+    public void secondStepCreatingTicket(String ticket_title, String commentary){
+        this.waitForElementPresent(DEAL_TYPE_TICKET_BUTTON, "Cannot see deal type button",3);
+        this.waitForElementAndClick(TICKET_TITLE_FIELD,"Cannot find and click ticket's title filed",3);
+        this.waitForElementAndSendKeys(EDIT_TICKET_TITLE_FIELD,ticket_title,"Cannot find and send keys in ticket's title filed",3);
+        this.waitForElementAndClick(DEAL_TYPE_TICKET_BUTTON,"Cannot find and click ticket type button",3);
+        this.waitForElementPresent(DEAL_TYPE_BUY,"Cannot see deal type Buy button",3);
+        this.waitForElementAndClick(DEAL_TYPE_BUY,"Cannot find and click Buy button",3);
+        this.waitForElementPresent(SAVE_TICKET_BUTTON, "Cannot see deal type button",3);
+        this.waitForElementAndClick(TYPE_OF_ESTATE_BS,"Cannot find and open type of state bottom-sheet",3);
+        this.waitForElementPresent(TYPE_OF_ESTATE_GARAGE,"Cannot see Garage type of the estate",3);
+        this.waitForElementAndClick(TYPE_OF_ESTATE_GARAGE,"Cannot find and click Garage type of the estate",3);
+        this.waitForElementPresent(CREATE_TICKET_COMMENTARY_FIELD,"Cannot see commentary field",3);
+        this.waitForElementAndClick(CREATE_TICKET_COMMENTARY_FIELD,"Cannot find and click commentary field",3);
+        this.waitForElementAndSendKeys(EDIT_CREATE_TICKET_COMMENTARY_FIELD,commentary,"Cannot find and send keys in commentary filed",3);
     }
 
     @Step("Entering clients name and phone number by string")
@@ -182,8 +207,11 @@ public class TicketsPageObject extends MainPageObject {
     public void createCurrentTicket(){
         this.waitForElementPresent(SAVE_TICKET_BUTTON, "Cannot see Save button on the screen",3);
         this.waitForElementAndClick(SAVE_TICKET_BUTTON, "Cannot see Save button on the screen",3);
-        this.waitForElementPresent(CLOSE_CROSS_BUTTON, "Cannot see Close button on doubles check screen",3);
-        this.waitForElementAndClick(CLOSE_CROSS_BUTTON, "Cannot see Close button on doubles check screen",3);
+    }
+
+    public void pressBack(){
+        this.waitForElementPresent(TOPBAR_BACK_BUTTON,"Cannot see Back button",3);
+        this.waitForElementAndClick(TOPBAR_BACK_BUTTON,"Cannot find and click Back button",3);
     }
 
     @Step("Going to Inner Tickets screen")
@@ -286,7 +314,7 @@ public class TicketsPageObject extends MainPageObject {
         this.waitForElementNotPresent(LOADER, "Still can see the loader", 4);
         this.waitForElementPresent(CREATE_OBJECT_BUTTON, "Cannot find and click Create object button", 3);
         this.waitForElementAndClick(CREATE_OBJECT_BUTTON, "Cannot find and click Create object button", 4);
-        this.waitForElementAndClick(TYPE_OF_ESTATE, "Cannot find and click Type of estate button", 5);
+        this.waitForElementAndClick(TYPE_OF_ESTATE_BS, "Cannot find and click Type of estate button", 5);
 
         if (Platform.getInstance().isIOS()) {
             this.tapByCoordinates(150, 550);

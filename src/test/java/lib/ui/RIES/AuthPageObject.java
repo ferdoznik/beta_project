@@ -72,7 +72,7 @@ public class AuthPageObject extends MainPageObject {
 
     @Step("Entering Login and password")
     public void enterLoginData(String login, String password) {
-        this.waitForElementPresent(LOGIN_FIELD, "Cannot find search input after clicking search init element");
+        this.waitForElementPresent(LOGIN_FIELD, "Cannot find login field");
         this.waitForElementAndClick(LOGIN_FIELD, "Cannot find and click search init element", 2);
         this.waitForElementAndSendKeys(EDIT_LOGIN_FIELD, login, "Cannot find and put Login", 5);
         this.waitForElementPresent(PASSWORD_FILED, "Cannot find search input after clicking search init element");
