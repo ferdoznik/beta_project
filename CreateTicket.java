@@ -15,9 +15,9 @@ import org.junit.Test;
 public class CreateTicket extends CoreTestCase {
 
     private static final String
-            login = "130522",
-            password = "99679218Aa",
-            ununique_phone_number = "89612133383",
+            login = "",
+            password = "",
+            ununique_phone_number = "",
             phone_number = RandomGenerator.generateRandomPhoneNumber(),
             long_phone_number = RandomGenerator.generateLongRandomPhoneNumber(),
             short_phone_number = RandomGenerator.generateShortRandomPhoneNumber(),
