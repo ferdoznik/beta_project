@@ -168,20 +168,4 @@ public class AuthTests extends CoreTestCase {
         Auth.assertIfBlockIsThere();
     }
 
-//    Пока не придумал как
-//    @Test
-//    @DisplayName("ID 7958 Entering the password from the clipboard")
-//    @Description("Logging in using the correct login and password copied from the clipboard.")
-//    @Step("Starting test 'testInsertPasswordFromClipboard'")
-//    @Severity(value = SeverityLevel.CRITICAL)
-//    public void testInsertPasswordFromClipboard() {
-//        AuthPageObject Auth = AuthPageObjectFactory.get(driver);
-//
-//        Auth.waitForLoginButton();
-//        Auth.enterLoginData(login, password);
-//        Auth.clickLOGINButton();
-//        Auth.waitForLoaderToDisappear();
-//        Auth.assertIfBlockIsThere();
-//    }
-
 }
