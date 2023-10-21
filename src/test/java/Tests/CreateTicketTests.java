@@ -15,9 +15,9 @@ import org.junit.jupiter.api.Test;
 public class CreateTicketTests extends CoreTestCase {
 
     private static final String
-            login = "130522",
-            password = "99679218Aa",
-            ununiquePhoneNumber = "89612133383",
+            login = "",
+            password = "",
+            ununiquePhoneNumber = "",
             longPhoneNumber = RandomGenerator.LongRandomPhoneNumber(),
             shortPhoneNumber = RandomGenerator.ShortRandomPhoneNumber(),
             ticketTitle = RandomGenerator.RandomTicketName();
