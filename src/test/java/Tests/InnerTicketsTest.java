@@ -18,8 +18,8 @@ import static app.lib.api.ApiMethods_v2.ticket.TicketsMethods.ticketIdBue;
 public class InnerTicketsTest extends CoreTestCase {
 
     private static final String
-            login = "130522",
-            password = "99679218Aa";
+            login = "",
+            password = "";
 
     @Test
     @DisplayName("Creating a mortgage ticket")
