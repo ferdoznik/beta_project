@@ -12,8 +12,8 @@ import org.junit.jupiter.api.Test;
 public class AuthTests extends CoreTestCase {
 
     private static final String
-            login = "130522",
-            password = "99679218Aa";
+            login = "",
+            password = "";
 
 
     @Test
